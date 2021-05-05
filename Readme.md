@@ -2,12 +2,12 @@
 
 Computational Fluid Dynamics (CFD) is a resource intensive solution to fluid flow modelling. These pose a serious contraint on usability and accessibility of such methods. Data driven methods are a good approach for combating these issues but are limited in terms of reliability and physical correctness. This project aims to solve these two problems at the same time. I propose Pix2Flows, a Physics-informed Conditional Generative Adversarial Network (GAN) based on modified Pix2Pix architecture for prediction of flow fields around custom geometries. This is in extenstion to my work on [DeepSteadyFlows](https://github.com/ritvik03/DeepSteadyFlows) and produces better performance than it on test cases as well as custom geometries. It also gets rid of the visual artifact present in previous methods and is more robust to complex shape transformation.
 
-![thumbnail](thumbnail.png)
+![thumbnail](image_assets/thumbnail.png)
 
 ## Model Evolution
 Below animation shows evolution of model results on one particular geometry between epoch 0 to 180.
 
-![evolution](evolution.gif)
+![evolution](image_assets/evolution.gif)
 
 # Results
 Few randomly picked results
