@@ -200,7 +200,7 @@ def discriminator_model(img_size=(128,64,3)):
 tf.keras.backend.clear_session()
 input_shape = (128,64,1)
 generator = generator_model((128,64,1), output_branch = 1)
-plot_model(generator,"pix2flows_generative_model.png",show_shapes=True, show_layer_names=True)
+# plot_model(generator,"pix2flows_generative_model.png",show_shapes=True, show_layer_names=True)
 generator.summary()
 
 
@@ -209,7 +209,7 @@ generator.summary()
 
 discriminator = discriminator_model()
 discriminator.summary()
-plot_model(discriminator,"pix2flows_discriminator_model.png",show_shapes=True)
+# plot_model(discriminator,"pix2flows_discriminator_model.png",show_shapes=True)
 
 
 # In[43]:
@@ -482,7 +482,7 @@ def custom_prediction(model, test_input, save=True):
     # print("u_true: "+str(u_true.shape))
     # print("u_pred: "+str(u_pred.shape))
 
-    display_list = [u_pred[:,:,0], v_pred[:,:,0], p_pred[:,:,0]]
+    display_list = [tf.multiply(u_pred[:,:,0],test_input[:,:,0]), tf.multiply(v_pred[:,:,0],test_input[:,:,0]), tf.multiply(p_pred[:,:,0],test_input[:,:,0])]
     title = ["u_pred", "v_pred", "p_pred"]
 
     for i in range(3):
