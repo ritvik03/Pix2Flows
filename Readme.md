@@ -9,6 +9,8 @@ Below animation shows evolution of model results on one particular geometry betw
 
 ![evolution](image_assets/evolution.gif)
 
+![l1_loss](image_assets/l1_loss.png)
+
 # Results
 Few randomly picked results
 
