@@ -65,12 +65,14 @@ Discriminator Loss function is sum of cross-entropy losses for determination of 
 
 ### Generator
 
-Generator Loss has 3 components:
+Generator Loss has 4 components:
 > **Fake generation loss** : how good the generator is at fooling the discriminator
 
 > **Mean absolute error** : How closely the predictions matches the true output
 
 > **NS-loss** : How much the predictions deviate from real world physics (Navier-Stokes equation)
+
+> **Gradient Loss** : Deviation in x and y spatial gradients of predicted fields from true fields
 
 **NS-loss** : e<sub>x</sub><sup>2</sup> + e<sub>y</sub><sup>2</sup>
 
@@ -81,9 +83,11 @@ Generator Loss has 3 components:
 - <strong>continuity_loss</strong> : Square of error in continuity equation in 2 dimensions
 
 ### Final Generator loss function :
-**Loss = Fake generation loss + λ * (MAE +  γ * NS-loss)**
+**Loss = Fake generation loss + λ<sub>1</sub> MAE +  λ<sub>2</sub> NS-loss + λ<sub>3</sub> Gradient_loss**
 
-λ = 100, γ = 100
+- λ<sub>1</sub> = 100
+- λ<sub>2</sub> = 10000
+- λ<sub>3</sub> = 100
 
 [Note]: More tinkering with network architecture and loss hyperparameters required. Also, generalize this to 3D
 
